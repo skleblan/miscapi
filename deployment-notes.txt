@@ -1,0 +1,12 @@
+setup ssh-agent
+
+set variable w/ remote hostname
+set variable w/ remote deployment location
+set variable w/ remote pid file
+
+scp lib to remote
+scp other files to remote
+
+ssh-cmd: check for pid file
+  if found, send sighub to pid
+  if not found, run script to start starman
