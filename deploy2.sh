@@ -1,5 +1,4 @@
 #!/bin/sh
-echo "not finished"; exit 255
 
 ssh-add
 if [[ $? != 0 ]]; then
@@ -11,9 +10,16 @@ APPHOME='/usr/local/lib/miscapi'
 HOST=$1
 PIDFILE="$APPHOME/starman.pid"
 
-scp ./miscapi.pm $HOST$APPHOME
-scp ./starman.sh $HOST$APPHOME
+scp ./miscapi.pm $HOST:$APPHOME
+scp ./app.psgi $HOST:$APPHOME
+scp ./starman.sh $HOST:$APPHOME
 
-ssh-cmd: check for pid file
-  if found, send sighub to pid
-  if not found, run script to start starman
+ssh $HOST ls $PIDFILE 2>/dev/null
+if [[ $? -eq 0 ]]; then
+  PID=$(ssh $HOST cat $PIDFILE)
+  ssh $HOST kill -HUP $PID
+else
+  ssh $HOST bash $APPHOME/starman.sh $APPHOME
+fi
+
+echo "Finished"
