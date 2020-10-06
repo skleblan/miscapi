@@ -1,7 +1,8 @@
 #!/usr/bin/perl
 
 use warnings; use strict;
-use lib ".";
+use FindBin;
+use lib "$FindBin::Bin";
 use miscapi;
 
 my $app = miscapi->to_app;
