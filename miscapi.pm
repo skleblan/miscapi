@@ -6,7 +6,7 @@ use Dancer2;
 
 get "/v0/hello" => sub
 {
-  return "hello world from miscapi";
+  return "hello world from miscapi\n";
 };
 
 1;

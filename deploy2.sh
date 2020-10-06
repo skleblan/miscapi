@@ -6,6 +6,8 @@ if [[ $? != 0 ]]; then
   exit 255;
 fi
 
+echo "Note: nginx must be modified manually (if needed)"
+
 APPHOME='/usr/local/lib/miscapi'
 HOST=$1
 PIDFILE="$APPHOME/starman.pid"

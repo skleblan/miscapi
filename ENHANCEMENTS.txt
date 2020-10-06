@@ -1,0 +1,12 @@
+
+auto-deploy nginx site file
+(see man Dancer2::Manual::Deployment)
+auto-restart nginx (and auto-test)
+
+routes
+body, request, query parameters
+throttling controls
+echo text
+simple state information
+random name generation (pokemon,pres,tv-chars,ints,cities,etc.)
+json serializer
