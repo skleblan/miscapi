@@ -1,0 +1,12 @@
+How to Test
+
+wget -nv -O - http://<host>/api/v0/hello
+
+wget defaults to printing out verbose meta-data
+-nv means non-verbose (small amount of meta-data)
+-q means quiet
+
+-O means redirect "ALL" output to specified filename or STDOUT if "-" specified
+
+--post-data 'key=value&key=value'
+
