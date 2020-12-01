@@ -10,3 +10,8 @@ wget defaults to printing out verbose meta-data
 
 --post-data 'key=value&key=value'
 
+found issue w/ nginx using 3xx codes to redirect http to https
+see https://rtfm.co.ua/en/http-redirects-post-and-get-requests-and-lost-data/
+
+long story short, use https to start
+then you won't have issues with "POSTS" changing to "GETS"
